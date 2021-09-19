@@ -1,0 +1,73 @@
+<html lang="sp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/masterstyle.css">
+    <script src="js/funciones.js"></script>
+    <title>PROGRAMA DE SUBNETEO</title>
+</head>
+<body>
+    <header>
+        <h1>PROGRAMA DE SUBNETEO</h1>
+    </header>
+    <div class="cal_Binario">
+        <form method="post" name="cal_Binario">
+            <h2>Traductor ip a binario:</h2>
+            <p>
+                <label>NUMERO DECIMAL:</label>
+                <input name="p" type="text" onkeypress="return validar(event)">--<input name="s" type="text" onkeypress="return validar(event)">--
+                <input name="t" type="text" onkeypress="return validar(event)">--<input name="c" type="text" onkeypress="return validar(event)">
+            </p>
+            <p>
+                <label>NUMERO BINARIO:</label>
+                <input name="pr" type="text" onkeypress="return validar(event)" readonly>--<input name="sr" type="text" onkeypress="return validar(event)" readonly>--
+                <input name="tr" type="text" onkeypress="return validar(event)" readonly>--<input name="cr" type="text" onkeypress="return validar(event)" readonly>
+            </p>
+            <input type="button" value="Convertir" onclick="traducir()">
+        </form>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div class="cal_Subrede">
+        <form method="post" name="cal_Subrede">
+            <h2>Calculadora de Subredes:</h2>
+            <p>
+                <label>Ip:</label>
+                <input name="p" type="text" onkeypress="return validar(event)">--<input name="s" type="text" onkeypress="return validar(event)">--
+                <input name="t" type="text" onkeypress="return validar(event)">--<input name="c" type="text" onkeypress="return validar(event)">
+            </p>
+            <p>
+                <label>Subredes:</label>
+                <input name="subredes" type="text" onkeypress="return validar(event)">
+            </p>
+            <input type="button" value="Calcular" onclick="calcular()">
+            <input type="button" value="Deshacer" onclick="Deshacer()">
+            <br>
+            <br>
+            <div class="tablas">
+                <table border="1">
+                    <thead>
+                        <td>Ip original</td>
+                        <td>Mascara</td>
+                        <td>Hosts</td>
+                        <td>Salto de red</td>
+                    </thead>
+                    <tbody name="data" id="data">
+
+                    </tbody>
+                </table>
+                <table border="1">
+                    <thead>
+                        <td>Subredes</td>
+                    </thead>
+                    <tbody name="data" id="sub">
+
+                    </tbody>
+                </table>
+            </div>   
+        </form>
+    </div>
+</body>
+</html>
